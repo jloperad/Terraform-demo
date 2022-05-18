@@ -5,9 +5,9 @@ resource "aws_security_group" "ec2_public_security_group" {
   vpc_id      = var.vpc_id
 
   ingress {
-    from_port   = 80
+    from_port   = 8080
     protocol    = "TCP"
-    to_port     = 80
+    to_port     = 8080
     cidr_blocks = ["0.0.0.0/0"]
   }
 
