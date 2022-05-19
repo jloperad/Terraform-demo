@@ -69,3 +69,8 @@ variable "sg_tags" {
   description = "SG resource tags"
   type        = map(string)
 }
+
+variable "permited_ip_for_ssh" {
+  description = "IPs that can connect to your EC2 instance"
+  type        = string
+}
