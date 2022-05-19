@@ -79,3 +79,74 @@ variable "permited_ip_for_ssh" {
   description = "IPs that can connect to your EC2 instance"
   type        = string
 }
+
+variable "subnet_group_name" {
+  description = "value of the subnet group name"
+  type        = string
+}
+
+variable "subnet_group_tags" {
+  description = "tags of the subnet group "
+  type        = map(string)
+}
+
+variable "db_identifier" {
+  description = "value of the db identifier"
+  type        = string
+}
+  
+variable "db_engine" {
+  description = "value of the db engine"
+  type        = string
+}
+
+variable "db_engine_version" {
+  description = "value of the db engine version"
+  type        = string
+}
+
+variable db_instance_class {
+  description = "value of the db instance class"
+  type        = string
+}
+
+variable "db_allocated_storage" {
+  description = "value of the db allocated storage"
+  type        = number
+}
+  
+variable "db_username" {
+  description = "value of the db username"
+  type        = string
+}
+
+variable "db_password" {
+  description = "value of the db password"
+  type        = string
+}
+  
+variable "db_port" {
+  description = "value of the db port"
+  type        = number
+}
+  
+variable "db_skip_final_snapshot" {
+  description = "value of the db skip final snapshot"
+  type        = bool
+}
+
+variable "db_public_access" {
+  description = "value of the db public access"
+  type        = bool
+}
+
+variable "eip_vpc" {
+  description = "value of the eip vpc"
+  type        = bool
+}
+  
+variable "eip_tags" {
+  description = "value of the eip tags"
+  type        = map(string)
+}
+  

@@ -38,6 +38,14 @@ resource "aws_security_group" "ec2_public_security_group" {
     description = "API"
   }
 
+  ingress {
+    from_port   = 5432
+    protocol    = "TCP"
+    to_port     = 5432
+    cidr_blocks = ["0.0.0.0/0"]
+    description = "Postgres"
+  }
+
   egress {
     from_port   = 0
     protocol    = "-1" # open all out rule
