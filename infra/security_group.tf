@@ -1,3 +1,4 @@
+
 # Creating Public Security Group
 resource "aws_security_group" "ec2_public_security_group" {
   name        = var.sg_name

@@ -26,7 +26,12 @@ variable "ami_id" {
   description = "EC2 AMI ID"
 }
 
-variable "subnet_id" {
+variable "subnet1_id" {
+  type        = string
+  description = "Subnet to deploy your resources"
+}
+
+variable "subnet2_id" {
   type        = string
   description = "Subnet to deploy your resources"
 }
