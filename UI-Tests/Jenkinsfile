@@ -4,21 +4,25 @@ pipeline {
   options {
     ansiColor('xterm')
   }
-  
+
   stages{
     stage("Install dependencies") {
        steps {
             dir("UI-Tests"){
-                sh 'npm ci'
+                sh '''npm ci
+                npm install mocha mochawesome cypress-mochawesome-reporter --save-dev
+                npm install cypress-multi-reporters --save-dev
+                npm install mochawesome-merge --save-dev
+                npm install mochawesome-report-generator --save-dev
+                '''
             }
        }
     }
     stage("Test the UI") {
        steps {
             dir("UI-Tests"){
-                sh 'HOST_IP=http://50.17.112.102/'
                 sh 'TERM=dumb'
-                sh 'NO_COLOR=1 npm test'
+                sh 'npm test'
             }
        }
     }
