@@ -35,7 +35,7 @@ describe("Deleting first item", () => {
     itemsListPage.visitMenuContentPage();
     itemsListPage.DeleteFirstItem();
     deleteItemPage.confirmDelete();
-    cy.wait(20000);
+    cy.wait(40000);
     itemsListPage.ValidateItemIsNotDisplayed(nameFirstItem, sellinFirstItem, qualityFirstItem, typeFirstItem);
     itemsListPage.Insights();
     itemsListPage.validateInsights(typeFirstItem);
