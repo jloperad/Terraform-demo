@@ -8,7 +8,7 @@ class ItemsListPage {
     
 
     constructor() {
-        this.menuContentPageURL = '$HOST_IP:4200/list'
+        this.menuContentPageURL = '${process.env.HOST_IP}:4200/list'
         this.addItemButton=' button.list-add-button'
         this.editItemButton=".mat-icon[data-automation='list-edit-button']"
         this.deleteItemButton=".mat-icon[data-automation='list-delete-button']"
