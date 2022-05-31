@@ -25,7 +25,7 @@ describe("Adding Items", () => {
     addItemPage.chooseType(type);
     addItemPage.confirmAdd();
 
-    cy.wait(12200);
+    cy.wait(4000);
     itemsListPage.ValidateItemIsDisplayed(name, sellin, quality, type);
   });
 });
