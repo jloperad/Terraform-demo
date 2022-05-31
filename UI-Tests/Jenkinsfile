@@ -11,7 +11,7 @@ pipeline {
     stage("Test the UI") {
        steps {
             dir("UI-Tests"){
-                sh 'npm test'
+                sh 'NO_COLOR=1 npm test'
             }
        }
     }
