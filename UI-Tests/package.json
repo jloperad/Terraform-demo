@@ -6,7 +6,8 @@
   "scripts": {
     "test:open": "npm run lint && cypress open",
     "lint": "eslint ./cypress/integration/**/*.ts",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "npm run lint -- --fix",
+    "test": "cypress run"
   },
   "repository": {
     "type": "git",
