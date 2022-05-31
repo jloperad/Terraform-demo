@@ -1,16 +1,16 @@
 {
-  "name": "cypress-training",
+  "name": "gildedrose-fe-testing",
   "version": "1.0.0",
   "description": "This is a Workshop about Cypress",
   "main": "index.js",
   "scripts": {
-    "test:open": "npm run lint && npx cypress open",
+    "test:open": "npm run lint && cypress open",
     "lint": "eslint ./cypress/integration/**/*.ts",
     "lint:fix": "npm run lint -- --fix"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jloperad/cypress-training.git"
+    "url": "git+https://github.com/jloperad/Gildedrose-FE-Testing.git"
   },
   "keywords": [
     "ui-testing",
@@ -18,17 +18,18 @@
     "practice",
     "cypress"
   ],
-  "author": "Juan Jose Lopera",
+  "author": "Juan Jose Lopera Duque <juanjoloperaduque@hotmail.com> (jloperad)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jloperad/cypress-training/issues"
+    "url": "https://github.com/jloperad/Gildedrose-FE-Testing/issues"
   },
-  "homepage": "https://github.com/jloperad/cypress-training#readme",
+  "homepage": "https://github.com/jloperad/Gildedrose-FE-Testing#readme",
   "devDependencies": {
     "@cypress/webpack-preprocessor": "^5.11.1",
     "@typescript-eslint/eslint-plugin": "^5.20.0",
     "@typescript-eslint/parser": "^5.20.0",
-    "eslint": "^8.13.0",
+    "cypress": "^9.5.4",
+    "eslint": "^8.14.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-import": "^2.26.0",
