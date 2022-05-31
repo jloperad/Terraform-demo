@@ -31,11 +31,11 @@ describe("Deleting first item", () => {
     });
   });
 
-  it("then the item should be deleted andd no loger displayed in the list", () => {
+  it("then the item should be deleted and no longer displayed in the list", () => {
     itemsListPage.visitMenuContentPage();
     itemsListPage.DeleteFirstItem();
     deleteItemPage.confirmDelete();
-    cy.wait(200);
+    cy.wait(5000);
     itemsListPage.ValidateItemIsNotDisplayed(nameFirstItem, sellinFirstItem, qualityFirstItem, typeFirstItem);
     itemsListPage.Insights();
     itemsListPage.validateInsights(typeFirstItem);
