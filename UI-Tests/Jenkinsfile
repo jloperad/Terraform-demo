@@ -11,6 +11,7 @@ pipeline {
     stage("Test the UI") {
        steps {
             dir("UI-Tests"){
+                sh 'HOST_IP=50.17.112.102'
                 sh 'TERM=dumb'
                 sh 'NO_COLOR=1 npm test'
             }
