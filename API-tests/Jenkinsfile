@@ -1,0 +1,19 @@
+pipeline {
+  agent any
+  stages{
+    stage("Install dependencies") {
+       steps {
+            dir("APi-tests"){
+                sh 'npm ci'
+            }
+       }
+    }
+    stage("Test the UI") {
+       steps {
+            dir("APi-tests"){
+                sh 'npm test'
+            }
+       }
+    }
+  }
+}
