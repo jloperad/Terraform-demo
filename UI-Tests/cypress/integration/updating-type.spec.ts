@@ -14,13 +14,13 @@ describe("Updating First Item", () => {
     itemsListPage = new ItemsListPage();
     addItemPage = new AddItemPage();
 
-    cy.request("http://localhost:8080/api/items").then((response) => {
+    cy.request("http://localhost:8081/api/items").then((response) => {
       for (const item of response.body) {
-        cy.request("DELETE", `http://localhost:8080/api/items/${item.id}`);
+        cy.request("DELETE", `http://localhost:8081/api/items/${item.id}`);
       }
     });
 
-    cy.request("POST", "http://localhost:8080/api/items/", {
+    cy.request("POST", "http://localhost:8081/api/items/", {
       name, sellIn: sellin, quality, type,
     });
   });

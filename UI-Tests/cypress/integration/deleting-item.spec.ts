@@ -17,16 +17,16 @@ describe("Deleting first item", () => {
   before(() => {
     itemsListPage = new ItemsListPage();
     deleteItemPage = new DeleteItemPage();
-    cy.request("http://localhost:8080/api/items").then((response) => {
+    cy.request("http://localhost:8081/api/items").then((response) => {
       for (const item of response.body) {
-        cy.request("DELETE", `http://localhost:8080/api/items/${item.id}`);
+        cy.request("DELETE", `http://localhost:8081/api/items/${item.id}`);
       }
     });
 
-    cy.request("POST", "http://localhost:8080/api/items/", {
+    cy.request("POST", "http://localhost:8081/api/items/", {
       name: nameFirstItem, sellIn: sellinFirstItem, quality: qualityFirstItem, type: typeFirstItem,
     });
-    cy.request("POST", "http://localhost:8080/api/items/", {
+    cy.request("POST", "http://localhost:8081/api/items/", {
       name: nameSecondItem, sellIn: sellinSecondItem, quality: qualitySecondItem, type: typeSecondItem,
     });
   });
