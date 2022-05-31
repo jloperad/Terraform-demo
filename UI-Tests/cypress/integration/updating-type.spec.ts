@@ -31,7 +31,7 @@ describe("Updating First Item", () => {
     addItemPage.clickType();
     addItemPage.chooseType(newType);
     addItemPage.confirmAdd();
-    cy.wait(2000);
+    cy.wait(20000);
     itemsListPage.ValidateItemIsDisplayed(name, sellin, quality, newType);
     itemsListPage.Insights();
     itemsListPage.validateInsights(newType);
