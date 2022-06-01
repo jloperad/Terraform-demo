@@ -32,9 +32,9 @@ pipeline {
         publishHTML (
                     target : [
                         alwaysLinkToLastBuild: true,
-                        reportDir: 'ui_testing/cypress/reports',
+                        reportDir: 'UI-Tests/cypress/reports',
                         reportFiles: 'report.html',
-                        reportName: 'UI Test Report'
+                        reportName: 'UI-Tests Report'
                     ]
                 )
       }
