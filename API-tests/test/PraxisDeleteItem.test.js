@@ -4,7 +4,7 @@ const chai = require('chai');
 
 const { expect } = chai;
 
-const PraxisURL = 'http://localhost:8080/api';
+const PraxisURL = 'http://54.162.70.124:8081/api';
 let firstItemId;
 
 describe('Test Praxis API with DeleteItem endpoint', () => {

@@ -7,7 +7,7 @@ const { itemSchema } = require('./schema/PraxisItemSchema.schema');
 const { expect } = chai;
 chai.use(jsonSchema);
 
-const PraxisURL = 'http://localhost:8080/api';
+const PraxisURL = 'http://54.162.70.124:8081/api';
 
 describe('Test Create Item Endpoint', () => {
   before(async () => {

@@ -5,7 +5,7 @@ const { afterEach, beforeEach } = require('mocha');
 
 const { expect } = chai;
 
-const PraxisURL = 'http://localhost:8080/api';
+const PraxisURL = 'http://54.162.70.124:8081/api';
 
 describe('Test Praxis API with UpdateQuality endpoint', () => {
   beforeEach(async () => {
