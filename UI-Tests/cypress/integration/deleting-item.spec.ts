@@ -26,9 +26,11 @@ describe("Deleting first item", () => {
     cy.request("POST", "http://localhost:8081/api/items/", {
       name: nameFirstItem, sellIn: sellinFirstItem, quality: qualityFirstItem, type: typeFirstItem,
     });
+    cy.wait(2000);
     cy.request("POST", "http://localhost:8081/api/items/", {
       name: nameSecondItem, sellIn: sellinSecondItem, quality: qualitySecondItem, type: typeSecondItem,
     });
+    cy.wait(2000);
   });
 
   it("then the item should be deleted and no longer displayed in the list", () => {

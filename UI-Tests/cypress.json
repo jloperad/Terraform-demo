@@ -1,6 +1,6 @@
 {
-    "defaultCommandTimeout": 20000000,
-    "responseTimeout": 20000000,
+    "defaultCommandTimeout": 20000,
+    "responseTimeout": 20000,
     "video": false,
   "screenshotOnRunFailure": false,
   "reporter": "cypress-multi-reporters",
