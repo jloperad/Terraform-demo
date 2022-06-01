@@ -28,8 +28,8 @@ pipeline {
                         allowMissing: false,
                         alwaysLinkToLastBuild: true,
                         keepAll: true,
-                        reportDir: '/var/lib/jenkins/workspace/API test pipeline/report/',
-                        reportFiles: 'APIreport.html',
+                        reportDir: 'API-tests/report/',
+                        reportFiles: 'ApiTesting.html',
                         reportName: 'API-Tests Report',
                         reportTitle: 'API-Tests Report',
                     ]
