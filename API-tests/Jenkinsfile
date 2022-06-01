@@ -30,7 +30,8 @@ pipeline {
                         keepAll: true,
                         reportDir: '/var/lib/jenkins/workspace/API test pipeline/report/',
                         reportFiles: 'APIreport.html',
-                        reportName: 'API-Tests Report'
+                        reportName: 'API-Tests Report',
+                        reportTitle: 'API-Tests Report',
                     ]
                 )
       }
