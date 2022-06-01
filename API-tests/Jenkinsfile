@@ -31,7 +31,7 @@ pipeline {
                         reportDir: 'API-tests/report/',
                         reportFiles: 'ApiTesting.html',
                         reportName: 'API-Tests Report',
-                        reportTitle: 'API-Tests Report',
+                        reportTitles: 'API-Tests Report',
                     ]
                 )
       }
