@@ -1,5 +1,9 @@
 pipeline {
   agent any
+  
+  options {
+    ansiColor('xterm')
+  }
   stages{
     stage("Install dependencies") {
        steps {
@@ -16,4 +20,18 @@ pipeline {
        }
     }
   }
+  post{
+      always{
+        publishHTML (
+                    target : [
+                        allowMissing: false,
+                        alwaysLinkToLastBuild: true,
+                        keepAll: true,
+                        reportDir: 'UI-Tests/cypress/reports',
+                        reportFiles: 'report.html',
+                        reportName: 'UI-Tests Report'
+                    ]
+                )
+      }
+    }
 }
