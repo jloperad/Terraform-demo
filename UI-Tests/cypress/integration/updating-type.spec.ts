@@ -9,18 +9,19 @@ describe("Updating First Item", () => {
   const quality = 34;
   const type = "NORMAL";
   const newType = "AGED";
+  const link = "50.17.112.102";
 
   before(() => {
     itemsListPage = new ItemsListPage();
     addItemPage = new AddItemPage();
 
-    cy.request("http://localhost:8081/api/items").then((response) => {
+    cy.request(`http://${link}:8081/api/items`).then((response) => {
       for (const item of response.body) {
-        cy.request("DELETE", `http://localhost:8081/api/items/${item.id}`);
+        cy.request("DELETE", `http://${link}:8081/api/items/${item.id}`);
       }
     });
 
-    cy.request("POST", "http://localhost:8081/api/items/", {
+    cy.request("POST", `http://${link}:8081/api/items`, {
       name, sellIn: sellin, quality, type,
     });
   });
@@ -34,6 +35,7 @@ describe("Updating First Item", () => {
     cy.wait(2000);
     itemsListPage.ValidateItemIsDisplayed(name, sellin, quality, newType);
     itemsListPage.Insights();
+    cy.wait(2000);
     itemsListPage.validateInsights(newType);
   });
 });

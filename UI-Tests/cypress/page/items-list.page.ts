@@ -8,7 +8,7 @@ class ItemsListPage {
     
 
     constructor() {
-        this.menuContentPageURL = 'http://localhost:4200/list'
+        this.menuContentPageURL = 'http://50.17.112.102:4200/list'
         this.addItemButton=' button.list-add-button'
         this.editItemButton=".mat-icon[data-automation='list-edit-button']"
         this.deleteItemButton=".mat-icon[data-automation='list-delete-button']"

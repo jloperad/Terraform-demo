@@ -14,23 +14,23 @@ describe("Deleting first item", () => {
   const qualitySecondItem = 34;
   const typeSecondItem = "NORMAL";
 
+  const link = "50.17.112.102";
+
   before(() => {
     itemsListPage = new ItemsListPage();
     deleteItemPage = new DeleteItemPage();
-    cy.request("http://localhost:8081/api/items").then((response) => {
+    cy.request(`http://${link}:8081/api/items`).then((response) => {
       for (const item of response.body) {
-        cy.request("DELETE", `http://localhost:8081/api/items/${item.id}`);
+        cy.request("DELETE", `http://${link}:8081/api/items/${item.id}`);
       }
     });
 
-    cy.request("POST", "http://localhost:8081/api/items/", {
+    cy.request("POST", `http://${link}:8081/api/items`, {
       name: nameFirstItem, sellIn: sellinFirstItem, quality: qualityFirstItem, type: typeFirstItem,
     });
-    cy.wait(2000);
-    cy.request("POST", "http://localhost:8081/api/items/", {
+    cy.request("POST", `http://${link}:8081/api/items`, {
       name: nameSecondItem, sellIn: sellinSecondItem, quality: qualitySecondItem, type: typeSecondItem,
     });
-    cy.wait(2000);
   });
 
   it("then the item should be deleted and no longer displayed in the list", () => {
@@ -40,6 +40,7 @@ describe("Deleting first item", () => {
     cy.wait(2000);
     itemsListPage.ValidateItemIsNotDisplayed(nameFirstItem, sellinFirstItem, qualityFirstItem, typeFirstItem);
     itemsListPage.Insights();
+    cy.wait(2000);
     itemsListPage.validateInsights(typeFirstItem);
   });
 });
