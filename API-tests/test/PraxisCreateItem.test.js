@@ -11,7 +11,6 @@ const PraxisURL = 'http://localhost:8080/api';
 
 describe('Test Create Item Endpoint', () => {
   before(async () => {
-    this.enableTimeouts(false);
     const items = await agent.get(`${PraxisURL}/items`);
     if (items.body.length > 0) {
       items.body.forEach(async (item) => { await agent.delete(`${PraxisURL}/items/${item.id}`); });
