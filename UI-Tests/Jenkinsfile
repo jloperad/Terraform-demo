@@ -26,5 +26,17 @@ pipeline {
             }
        }
     }
+    stage('Report') {
+            steps {
+                publishHTML (
+                    target : [
+                        alwaysLinkToLastBuild: true,
+                        reportDir: 'ui_testing/cypress/reports',
+                        reportFiles: 'report.html',
+                        reportName: 'UI Test Report'
+                    ]
+                )
+            }
+        }
   }
 }
