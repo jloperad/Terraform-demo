@@ -5,7 +5,7 @@ data "http" "myipaddr" {
 module "deploy_ec2" {
   source        = "../infra"
   aws_region    = "us-east-1"
-  instance_type = "t2.small"
+  instance_type = "t2.medium"
   ec2_tags      = { Name = "group1-ec2" }
   ami_id        = "ami-005de95e8ff495156"
   key_pair_name = "team1"

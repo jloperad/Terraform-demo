@@ -9,7 +9,7 @@ describe("Updating First Item", () => {
   const quality = 34;
   const type = "NORMAL";
   const newType = "AGED";
-  const link = "50.17.112.102";
+  const link = "54.162.70.124";
 
   before(() => {
     itemsListPage = new ItemsListPage();

@@ -14,7 +14,7 @@ describe("Deleting first item", () => {
   const qualitySecondItem = 34;
   const typeSecondItem = "NORMAL";
 
-  const link = "50.17.112.102";
+  const link = "54.162.70.124";
 
   before(() => {
     itemsListPage = new ItemsListPage();
