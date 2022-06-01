@@ -1,6 +1,6 @@
 pipeline {
   agent any
-  
+
   options {
     ansiColor('xterm')
   }
@@ -27,9 +27,9 @@ pipeline {
                         allowMissing: false,
                         alwaysLinkToLastBuild: true,
                         keepAll: true,
-                        reportDir: 'UI-Tests/cypress/reports',
-                        reportFiles: 'report.html',
-                        reportName: 'UI-Tests Report'
+                        reportDir: 'API-tests/reports',
+                        reportFiles: 'APIreport.html',
+                        reportName: 'API-Tests Report'
                     ]
                 )
       }
