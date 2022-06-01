@@ -26,9 +26,9 @@ pipeline {
             }
        }
     }
-    stage('Report') {
-            steps {
-                publishHTML (
+    post{
+      always{
+        publishHTML (
                     target : [
                         alwaysLinkToLastBuild: true,
                         reportDir: 'ui_testing/cypress/reports',
@@ -36,7 +36,7 @@ pipeline {
                         reportName: 'UI Test Report'
                     ]
                 )
-            }
-        }
+      }
+    }
   }
 }
