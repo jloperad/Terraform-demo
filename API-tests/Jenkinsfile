@@ -9,6 +9,7 @@ pipeline {
        steps {
             dir("API-tests"){
                 sh 'npm ci'
+                sh 'npm install mocha mochawesome cypress-mochawesome-reporter --save-dev'
             }
        }
     }
@@ -27,7 +28,7 @@ pipeline {
                         allowMissing: false,
                         alwaysLinkToLastBuild: true,
                         keepAll: true,
-                        reportDir: 'API-tests/reports',
+                        reportDir: 'API-tests/report',
                         reportFiles: 'APIreport.html',
                         reportName: 'API-Tests Report'
                     ]
