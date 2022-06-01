@@ -32,7 +32,7 @@ describe('Test List Items Endpoint', () => {
 
     const newItem = await agent.post(`${PraxisURL}/items`).send(item);
     const itemId = newItem.body.id;
-    const response = await agent.get('http://localhost:8080/api/items');
+    const response = await agent.get('http://54.162.70.124:8081/api/items');
 
     expect(response.status).to.equal(statusCode.OK);
     expect(response.body).to.have.lengthOf(1);
