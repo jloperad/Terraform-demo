@@ -18,6 +18,7 @@ describe("Adding Items", () => {
     itemsListPage.visitMenuContentPage();
 
     itemsListPage.AddItem();
+    cy.wait(2000);
     addItemPage.fillInNameInput(name);
     addItemPage.fillInSellInInput(sellin);
     addItemPage.fillInQualityInput(quality);
@@ -25,7 +26,7 @@ describe("Adding Items", () => {
     addItemPage.chooseType(type);
     addItemPage.confirmAdd();
 
-    cy.wait(4000);
+    cy.wait(2000);
     itemsListPage.ValidateItemIsDisplayed(name, sellin, quality, type);
   });
 });
