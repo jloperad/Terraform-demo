@@ -31,7 +31,9 @@ pipeline {
       always{
         publishHTML (
                     target : [
+                        allowMissing: false,
                         alwaysLinkToLastBuild: true,
+                        keepAll: true,
                         reportDir: 'UI-Tests/cypress/reports',
                         reportFiles: 'report.html',
                         reportName: 'UI-Tests Report'
