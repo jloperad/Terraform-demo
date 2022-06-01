@@ -10,12 +10,13 @@ chai.use(jsonSchema);
 const PraxisURL = 'http://54.162.70.124:8081/api';
 
 describe('Test List Items Endpoint', () => {
-  before(async () => {
+  beforeEach(async () => {
     const items = await agent.get(`${PraxisURL}/items`);
     if (items.body.length > 0) {
       items.body.forEach(async (item) => { await agent.delete(`${PraxisURL}/items/${item.id}`); });
     }
   });
+  
   it('Empty List', async () => {
     const response = await agent.get(`${PraxisURL}/items`);
 
