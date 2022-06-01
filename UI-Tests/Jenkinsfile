@@ -25,8 +25,9 @@ pipeline {
                 sh 'npm test'
             }
        }
-    }
-    post{
+    }    
+  }
+  post{
       always{
         publishHTML (
                     target : [
@@ -38,5 +39,4 @@ pipeline {
                 )
       }
     }
-  }
 }
