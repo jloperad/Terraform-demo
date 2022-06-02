@@ -30,7 +30,7 @@ describe('Test Create Item Endpoint', () => {
 
     expect(response.status).to.equal(statusCode.CREATED);
     expect(response.body.name).to.be.equal(item.name);
-    expect(response.body.sellIn).to.be.equal(item.sellIn);
+    expect(response.body.sellIn).to.be.equal(2);
     expect(response.body.quality).to.be.equal(item.quality);
     expect(response.body.type).to.be.equal(item.type);
     expect(response.body).to.be.jsonSchema(itemSchema);
