@@ -9,17 +9,15 @@ chai.use(jsonSchema);
 
 const PraxisURL = 'http://54.162.70.124:8081/api';
 
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
 describe('Test List Items Endpoint', () => {
+
   beforeEach(async () => {
     const items = await agent.get(`${PraxisURL}/items`);
     if (items.body.length > 0) {
       items.body.forEach(async (item) => { await agent.delete(`${PraxisURL}/items/${item.id}`); });
     }
   });
+  
   afterEach(async () => {
     const items = await agent.get(`${PraxisURL}/items`);
     if (items.body.length > 0) {

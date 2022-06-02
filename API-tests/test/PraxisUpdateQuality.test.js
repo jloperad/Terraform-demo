@@ -8,12 +8,14 @@ const { expect } = chai;
 const PraxisURL = 'http://54.162.70.124:8081/api';
 
 describe('Test Praxis API with UpdateQuality endpoint', () => {
+
   beforeEach(async () => {
     const items = await agent.get(`${PraxisURL}/items`);
     if (items.body.length > 0) {
       items.body.forEach(async (item) => { await agent.delete(`${PraxisURL}/items/${item.id}`); });
     }
   });
+  
   afterEach(async () => {
     const items = await agent.get(`${PraxisURL}/items`);
     if (items.body.length > 0) {

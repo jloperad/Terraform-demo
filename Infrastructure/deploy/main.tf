@@ -24,7 +24,6 @@ module "deploy_ec2" {
   eip_vpc = true
   eip_tags = { Name = "group1-eip" }
 
-
   subnet_group_name = "group1-subnet_group"
   subnet_group_tags = { Name = "group1-subnet_group" }
 

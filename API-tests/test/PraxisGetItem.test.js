@@ -11,7 +11,9 @@ const PraxisURL = 'http://54.162.70.124:8081/api';
 
 let newItem;
 let newItemId;
+
 describe('Test Get Item Endpoint', () => {
+
   before(async () => {
     newItem = {
       name: 'Chocolate Milk',
@@ -23,6 +25,7 @@ describe('Test Get Item Endpoint', () => {
     const response = await agent.post(`${PraxisURL}/items`).send(newItem);
     newItemId = response.body.id;
   });
+
   it('Get Item created last', async () => {
     const response = await agent.get(`${PraxisURL}/items`);
 
@@ -36,12 +39,14 @@ describe('Test Get Item Endpoint', () => {
     expect(lastItem.type).to.be.equal(newItem.type);
     expect(lastItem).to.be.jsonSchema(itemSchema);
   });
+
   it('Get Item with valid id but not created yet', async () => {
     const notCreatedId = 150231563;
     const response = await agent.get(`${PraxisURL}/items/${notCreatedId}`).ok(() => true);
 
     expect(response.status).to.equal(statusCode.NOT_FOUND);
   });
+  
   it('Get Item with invalid id', async () => {
     const invalidId = 'pepito';
     const response = await agent.get(`${PraxisURL}/items/${invalidId}`).ok(() => true);
